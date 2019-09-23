@@ -1,0 +1,17 @@
+# -*- coding:utf-8 -*-
+class Solution:
+    # array 二维列表
+    def Find(self, target, array):
+        # write code here
+        rows = len(array) - 1;#求array的二维长度
+        cols = len(array[0]) - 1;#求array的一维长度
+        i = rows;#二维的长度赋值给 i
+        j = 0;
+        while i >= 0 and j <= cols:#i >= 0 则出行边界，j <= cols 则
+            if target < array[i][j]:#元素小就往上一行找
+                i -= 1;
+            elif target > array[i][j]:#元素大就往下一个找
+                j += 1;
+            else:
+                return True;#找到就返回True
+        return False;
